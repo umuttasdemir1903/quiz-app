@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(/images/bg.avif) no-repeat center;
+  background-size: cover;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.quiz-container {
+  width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 2 rgba(100, 100, 100, 0.7);
+  margin-bottom: 2rem;
+  background-color: #fff;
+}
+
+.quiz-header {
+  padding: 3rem;
+}
+
+h1 {
+  line-height: 2;
+  font-style: italic;
+  text-decoration: underline;
+  color: white;
+}
+
+h2{
+    text-align: center;
+    font-size: 23px;
+}
+
+ul {
+  padding: 0;
+  line-height: 2;
+}
+
+ul li {
+  font-size: 1.2rem;
+}
+
+ul li label {
+  cursor: pointer;
+}
+
+.submit {
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  padding: .7rem;
+  transition: .5s ease;
+  font-size: 1.3rem;
+  width: 100%;
+  border-radius:0 0 15px 15px ;
+  background-color: #00DFA2;
+}
+
+
+#submit:focus:after{
+    content: ', my last decision 👍';
+}
+
+#submit:focus{
+    outline: none;
+    background-color:#FF55BB ;
+}
+
+[type='radio']:checked,
+[type='radio']:not(:checked){
+    display: none;
+}
+
+[type='radio']:checked + label,
+[type='radio']:not(:checked) + label {
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
+[type='radio']:checked + label::before,
+[type='radio']:not(:checked) + label::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 100%;
+    margin-top: .3rem;
+    border: 1px solid #555;
+}
+
+[type='radio']:checked + label::after,
+[type='radio']:not(:checked) + label::after{
+    content: '';
+    position: absolute;
+    top: 7.8px;
+    left:3px;
+    width: .75rem;
+    height: .75rem;
+    transition: all .3s ease;
+    border-radius: 100%;
+    background-color: #FF55BB;
+}
+
+[type='radio']:not(:checked) + label::after{
+    opacity: 0;
+}
+
+[type='radio']:checked + label::after{
+    opacity: 1;
+}
